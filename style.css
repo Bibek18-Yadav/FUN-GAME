@@ -1,0 +1,63 @@
+body {
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 20px;
+}
+
+.photo {
+  width: 60%;
+  max-width: 250px;
+  border-radius: 20px;
+  margin: 15px 0;
+}
+button {
+  padding: 15px 25px;
+  font-size: 18px;
+  border-radius: 15px;
+  cursor: pointer;
+  min-width: 110px;
+  border: none;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 15px gold;
+}
+
+#yesBtn {
+  background: #4CAF50;
+  color: white;
+}
+
+#noBtn {
+  background: #ff4d4d;
+  color: white;
+}
+
+.animated-text {
+  font-size: 36px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); color: #ff4d4d; }
+  50% { transform: scale(1.2); color: #ff9900; }
+  100% { transform: scale(1); color: #ff4d4d; }
+}
+.emoji {
+  position: fixed;
+  font-size: 30px;
+  animation: float 4s infinite linear;
+}
+
+@keyframes float {
+  0% { top: 100%; left: 10%; }
+  100% { top: -10%; left: 80%; }
+}

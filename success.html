@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Victory! 🎉</title>
+<style>
+  /* Full screen */
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background: #000; /* dark background for fireworks */
+    color: #fff;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+  }
+
+  h1 {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    font-size: 3em;
+    color: gold;
+    text-shadow: 2px 2px #ff0000;
+    animation: bounceText 2s infinite;
+  }
+
+  h2 {
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    font-size: 2em;
+    color: #00ffcc;
+    text-shadow: 2px 2px #ff00ff;
+    animation: bounceText 2s infinite alternate;
+  }
+
+  /* Bouncy text animation */
+  @keyframes bounceText {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px) rotate(-2deg); }
+    100% { transform: translateY(0) rotate(2deg); }
+  }
+
+  /* Firework style */
+  .firework {
+    position: absolute;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+  }
+
+</style>
+</head>
+<body>
+
+<h1>🎉 Congratulations! 🎉</h1>
+<h2>Welcome to Nepal 🇳🇵</h2>
+
+<script>
+  // Fireworks animation
+  function createFirework() {
+    const firework = document.createElement('div');
+    firework.className = 'firework';
+    firework.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    firework.style.left = Math.random() * window.innerWidth + 'px';
+    firework.style.top = Math.random() * window.innerHeight + 'px';
+    document.body.appendChild(firework);
+
+    const size = Math.random() * 8 + 5;
+    firework.style.width = size + 'px';
+    firework.style.height = size + 'px';
+
+    const xMove = (Math.random() - 0.5) * 200;
+    const yMove = (Math.random() - 0.5) * 200;
+    const duration = Math.random() * 1500 + 1000;
+
+    firework.animate([
+      { transform: 'translate(0px,0px)', opacity: 1 },
+      { transform: `translate(${xMove}px,${yMove}px)`, opacity: 0 }
+    ], {
+      duration: duration,
+      easing: 'ease-out',
+      fill: 'forwards'
+    });
+
+    setTimeout(() => {
+      firework.remove();
+    }, duration);
+  }
+
+  // Generate fireworks continuously
+  setInterval(createFirework, 200);
+</script>
+
+</body>
+</html>
+
